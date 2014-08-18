@@ -1,0 +1,17 @@
+.qtip-light{
+	background-color: white;
+	border-color: #E2E2E2;
+	color: #454545;
+}
+
+.qtip-light .qtip-titlebar{
+	background-color: #0079C2;
+	color:white;
+}
+
+.qtip-content {
+position: relative;
+overflow: hidden;
+text-align: left;
+word-wrap: break-word;
+}

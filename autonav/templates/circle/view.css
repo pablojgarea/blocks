@@ -1,0 +1,65 @@
+.circulo {
+display: table-cell;
+vertical-align: middle;
+text-align: center;
+height: 160px;
+width: 140px;
+padding: 0 10px 0 10px;
+}
+
+#radial_container { 
+	position:relative; 
+	left:425px; 
+	top: 75px; 
+	width:100px; 
+	height:100px; 
+	text-align:center;
+}
+.radial_div_item {
+	color:#234;
+	border-style: inset;
+	border-width: 5px;
+	-moz-border-radius:100px;
+	-webkit-border-radius:100px;
+	cursor:pointer;
+	background-color: #361168;
+	border-radius: 100px;
+	width: 160px;
+	height: 160px;
+	padding-top: 0px;
+	opacity: 0.9;
+}
+.radial_div_item:nth-child(4n+2) {
+		background-color: #8670ac;
+}
+.radial_div_item:nth-child(4n+3) {
+		background-color: #d4cde6;
+}
+.radial_div_item:nth-child(4n+4) {
+		background-color: #a6b0d6;
+}
+.radial_div_item:hover {
+	opacity: 1;
+}
+.radial_div_item a {
+	color: white;
+	text-decoration: none;
+	font-weight: bolder;
+	font-size: 18px;
+	text-shadow: 2px 2px 2px black;
+}
+.radial_div_item.active { 
+	background-color:#511; color:white;
+	padding: 10px; 
+	-moz-border-radius:40px;
+	z-index:100;
+}
+.my_class { 
+	font-size:1.5em; 
+	color:#abc;
+	background-color:#def;
+	-moz-border-radius:30px;
+	width:30px;
+	height:30px;
+	-webkit-border-radius:30px;
+}
