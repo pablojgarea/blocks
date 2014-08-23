@@ -57,10 +57,10 @@ $th = Loader::helper('text');
 		/* The HTML from here through "endforeach" is repeated for every item in the list... */ ?>
 
 		<div class="item-listado panel panel-default col-md-12">
-			<div class="titulo"><a href="<?php  echo $url ?>" target="<?php  echo $target ?>"><?php  echo $title ?></a></div>
-			
-
-			<div class="descripcion oculto"><a href="<?php  echo $url ?>" target="<?php  echo $target ?>"><?php if (!(empty($description))){ echo $description; }else{ echo $title; } ?></a></div>
+			<div class="contenido-item">
+				<div class="titulo"><a href="<?php  echo $url ?>" target="<?php  echo $target ?>"><?php  echo $title ?></a></div>
+				<div class="descripcion"><a href="<?php  echo $url ?>" target="<?php  echo $target ?>"><?php if (!(empty($description))){ echo $description; }else{ echo $title; } ?></a></div>
+			</div>
 		</div>
 		
 	<?php  endforeach; ?>

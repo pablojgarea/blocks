@@ -2,11 +2,14 @@
 	width:200px;
 }
 
-
+.contenido-item {
+	position:absolute;
+	display: table;
+	height: 100%;
+	width: 100%;
+}
 
 #destacados .item-listado {
-  display:table;
-  	background-color: #0079c2;
 	opacity:0.7;
 	background-color: white;
 	height: 122px;
@@ -17,29 +20,31 @@
 	border-radius: 6px;
 	border: 1px solid  white;
 }
-
-#destacados .item-listado .descripcion {	
-    display:none;
-    position: relative;
-    top:40px;
+#destacados .item-listado .titulo {
 	margin-bottom: 2px; 
 	vertical-align: middle;
 	text-align: center;
     padding: 5px;
     z-index:3;
-}
+    display: table-cell;
 
-#destacados .item-listado .descripcion .oculto {
-    position: absolute;
 }
-
-#destacados .item-listado .titulo {
+#destacados .item-listado .descripcion {
+    position: relative;
 	margin-bottom: 2px; 
-	display: table-cell;
 	vertical-align: middle;
 	text-align: center;
     padding: 5px;
-    z-index:2;
+    z-index:3;
+	display: none; 
+	padding-top: 10px;
+	padding-bottom: 10px;
+	border-radius: 6px;
+	margin: 0 -15px;
+}
+
+#destacados .item-listado .oculto {
+    opacity:0;
 }
 
 #destacados .titulo a{
@@ -53,28 +58,28 @@
 	text-decoration: none;
 }
 
-#destacados .item-listado:nth-of-type(n) {
+#destacados .item-listado:nth-of-type(n), #destacados .item-listado:nth-of-type(n) .descripcion {
     background-color: #0079c2;
 }
 
- #destacados .item-listado:nth-of-type(2n) {
+ #destacados .item-listado:nth-of-type(2n), #destacados .item-listado:nth-of-type(2n) .descripcion {
     background-color: #0a00c2;
 }
 
-#destacados .item-listado:nth-of-type(3n){
+#destacados .item-listado:nth-of-type(3n), #destacados .item-listado:nth-of-type(3n) .descripcion{
     background-color: #8b00c2;
 }
- #destacados .item-listado:nth-of-type(4n){
+ #destacados .item-listado:nth-of-type(4n), #destacados .item-listado:nth-of-type(4n) .descripcion{
     background-color: #416881;
 }
 
-#destacados .item-listado:nth-of-type(5n){
+#destacados .item-listado:nth-of-type(5n), #destacados .item-listado:nth-of-type(5n) .descripcion{
     background-color: #3d3d3d;
 }
 
- #destacados .item-listado:nth-of-type(6n){
+ #destacados .item-listado:nth-of-type(6n), #destacados .item-listado:nth-of-type(6n) .descripcion{
     background-color: #651A83;
 }
-#destacados .item-listado:nth-of-type(7n){
+#destacados .item-listado:nth-of-type(7n), #destacados .item-listado:nth-of-type(7n) .descripcion{
     background-color: #0079c2;
 }

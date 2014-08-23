@@ -1,49 +1,50 @@
 $(document).ready(function() {
-    $('.item-listado').hover(function() {
 
-    });
+    
+    $(".contenido-item").hover(function() {
+        var fadeinBox = $(this).children('.descripcion');
+        var fadeoutBox = $(this).children('.titulo');
 
-    $(".item-listado").hover(function() {
-        $(this).stop().animate({
-            "opacity": 1
-        });
-        $(this).children('.titulo').stop().animate({
-            "opacity": 0
-        });
-        
-        $(this).children('.descripcion').css('display', 'table-cell');
-        $(this).children('.descripcion').removeClass('oculto');
+        fadeoutBox.stop(false, true).fadeOut(300,function(){fadeinBox.stop(false, true).fadeIn(400);this.style.removeAttribute('filter'); 
+            });
+    
 
-        $(this).children('.descripcion').animate({
-            top: '-=40px',
-        },200);
 
-        $(this).children('.titulo').animate({
-            top: '-=40px',
-        },200);
-
-        setTimeout(function(){
-            $(this).children('.titulo').toggle();
-        }, 200);
-        
     }, function() {
-        $(this).stop().animate({
-            "opacity": 0.5
-        });
-        $(this).children('.titulo').toggle();
-        $(this).children('.descripcion').animate({
-            top: '+=40px'
-        },200);
+       var fadeinBox = $(this).children('.titulo');
+        var fadeoutBox = $(this).children('.descripcion');
 
-        $(this).children('.titulo').animate({
-            top: '+=40px'
-        },200);
-
-        setTimeout(function(){
-            $(this).children('.descripcion').addClass('oculto');
-        }, 200);
-        $(this).children('.descripcion').toggle();
+        fadeoutBox.stop(false, true).fadeOut(300,function(){fadeinBox.stop(false, true).fadeIn(400);this.style.removeAttribute('filter'); 
+            });
 
         
     });
+
+    var m = /(MSIE) ([\w.]+)/.exec( navigator.userAgent );
+var patch = m && m[1] && m[2] < 9;
+
+if (patch) {
+    $.fn.fadeIn = function(speed, callback) {
+        return this.animate({opacity: 'show'}, speed, function() {
+            this.style.removeAttribute('filter'); 
+            callback && callback(); 
+        });
+    };
+
+    $.fn.fadeOut = function(speed, callback) {
+        return this.animate({opacity: 'hide'}, speed, function() {
+            this.style.removeAttribute('filter'); 
+            callback && callback(); 
+        });
+    };
+
+    $.fn.fadeTo = function(speed,to,callback) {
+        return this.animate({opacity: to}, speed, function() {
+            to == 1 && this.style.removeAttribute('filter'); 
+            callback && callback(); 
+        });
+    };
+}
+
+
 });
