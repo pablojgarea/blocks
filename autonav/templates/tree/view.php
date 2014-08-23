@@ -118,7 +118,7 @@ foreach ($navItems as $ni) {
 	if ($ni->hasSubmenu) {
 		echo '<span><i class="fa fa-minus-square"></i> </span>';
 	}
-	echo '<a href="' . $ni->url . '" target="' . $ni->target . '" class="' . $ni->classes . '">' . $ni->name . '</a>';
+	echo '<a href="' . $ni->url . '" target="' . $ni->target . '" class=" ' . $ni->classes . '">' . $ni->name . '</a>';
 
 	if ($ni->hasSubmenu) {
 		echo '<ul class="nivel2">'; //opens a dropdown sub-menu

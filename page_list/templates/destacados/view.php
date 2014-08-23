@@ -60,7 +60,7 @@ $th = Loader::helper('text');
 			<div class="titulo"><a href="<?php  echo $url ?>" target="<?php  echo $target ?>"><?php  echo $title ?></a></div>
 			
 
-			<div class="descripcion"><a href="<?php  echo $url ?>" target="<?php  echo $target ?>"><?php if (!(empty($description))){ echo $description; }else{ echo $title; } ?></a></div>
+			<div class="descripcion oculto"><a href="<?php  echo $url ?>" target="<?php  echo $target ?>"><?php if (!(empty($description))){ echo $description; }else{ echo $title; } ?></a></div>
 		</div>
 		
 	<?php  endforeach; ?>

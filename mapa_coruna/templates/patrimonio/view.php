@@ -444,6 +444,9 @@ foreach($pages as $page) {
 
 <script type="text/javascript">
 
+
+
+
 $('map area').click(function(e){
                e.preventDefault();
                e.stopPropagation();
