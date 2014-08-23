@@ -1,27 +1,46 @@
 .tree {
-    width: 350px;
+    width: 250px;
     min-height:20px;
 
     margin-bottom:20px;
     /*background-color:#fbfbfb;*/
 
 }
-.tree .nav .fa {
-    margin-right: -18px;
+.tree ul {
+    padding-left: 10px;
+} 
+.tree li {
+        list-style-type:none;
 }
- .nivel1 > li > a {
-    list-style-type:none;
-    margin:0;
-    padding:0 5px 0 15px;
+
+.tree .nodo {
+    margin-bottom:1px;
+    padding: 2px 10px;
     position:relative;
     display: inline-block;
     border: 1px solid #999;
     border-radius: 5px;
-    color:black;
+    color: #333;
+    background-color: #f5f5f5;
+    border-color: #ddd;
+    width: 100%;
+
+}
+.tree .nodo:hover{
+    background-color: #f0f0f0 
+}
+.tree a {
+  color: black;
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
-.tree a:hover {
-  color: black;
+.tree .nodo a:hover {
+    font-weight: bold;
+    color: black;
+    text-decoration: none;
 }
 
 .tree li::before, .tree li::after {
@@ -30,14 +49,22 @@
     position:absolute;
     right:auto
 }
+.tree li.parent_li > ul > li >.nodo {
+    background-color: #fdfdfd 
 
+}
 .tree li span {
     display:inline-block;
-    padding:3px 8px;
-    text-decoration:none
+    padding:3px 8px 3px 0;
+    text-decoration:none;
+    color: #0079c2;
+    float: left;
 }
 .tree li.parent_li>span {
     cursor:pointer
+}
+.tree li.parent_li > ul > li {
+    display: none
 }
 .tree>ul>li::before, .tree>ul>li::after {
     border:0
@@ -45,8 +72,3 @@
 .tree li:last-child::before {
     height:30px
 }
-/*.tree li.parent_li>span:hover, .tree li.parent_li>span:hover+ul li span {
-    background:#eee;
-    border:1px solid #94a0b4;
-    color:#000
-}*/

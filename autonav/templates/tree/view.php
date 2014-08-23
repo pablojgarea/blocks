@@ -116,12 +116,17 @@ foreach ($navItems as $ni) {
 	echo '<li class="' . $ni->classes . '">'; //opens a nav item
 
 	if ($ni->hasSubmenu) {
-		echo '<span><i class="fa fa-minus-square"></i> </span>';
+		echo '<div class="carpeta">';
+	}
+	echo '<div class="nodo">';
+	if ($ni->hasSubmenu) {
+		echo '<span><i class="fa fa-plus-circle"></i> </span>';
 	}
 	echo '<a href="' . $ni->url . '" target="' . $ni->target . '" class=" ' . $ni->classes . '">' . $ni->name . '</a>';
+	echo '</div>';
 
 	if ($ni->hasSubmenu) {
-		echo '<ul class="nivel2">'; //opens a dropdown sub-menu
+		echo '</div><ul class="nivel2">'; //opens a dropdown sub-menu
 	} else {
 		echo '</li>'; //closes a nav item
 		echo str_repeat('</ul></li>', $ni->subDepth); //closes dropdown sub-menu(s) and their top-level nav item(s)
