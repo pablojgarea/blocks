@@ -12,16 +12,19 @@
           e.stopPropagation();
     	});
 
-    var url = window.location.pathname;
-    
-    var padres= $('.tree a[href*="'+url+'"]').parentsUntil('.tree');
-    var nodo= $('.tree a[href*="'+url+'"]').parent().parent().parent().parent('li.parent_li');
-    var hijos = padres.find(' > ul > li');
-   
-           hijos.show('fast');
-           nodo.show('fast'); 
+      var url = window.location.pathname;
+      var padres= $('.tree a[href*="'+url+'"]').parentsUntil('.tree > .nivel1');
+      var nodo= $('.tree a[href*="'+url+'"]').parent().parent().parent().parent('li.parent_li');
+      var hijos = nodo.children('ul').children('li');
+      //nodo.children('> .carpeta, > .nodo').attr('id','actual');
+      padres.show();
+      nodo.show();
+      hijos.show();
+      
+      padres.attr('title', 'Collapse this branch').find('i').addClass('fa-minus-circle').removeClass('fa-plus-circle');      
+/*
+      hijos.attr('title', 'Collapse').find(' >  i').addClass('fa-plus-circle').removeClass('fa-minus-circle');
+      nodo.attr('title', 'Collapse').find(' > i').addClass('fa-minus-circle').removeClass('fa-plus-circle');
 
-           hijos.attr('title', 'Collapse').find(' >  i').addClass('fa-plus-circle').removeClass('fa-minus-circle');
-           nodo.attr('title', 'Collapse').find(' > i').addClass('fa-minus-circle').removeClass('fa-plus-circle');
-
+*/
   	});

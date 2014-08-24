@@ -6,28 +6,36 @@
     /*background-color:#fbfbfb;*/
 
 }
+.tree .nav-selected > .carpeta >.nodo, .tree .nav-selected > .nodo{
+    border:1px solid rgb(114, 129, 168); 
+}
 .tree ul {
-    padding-left: 10px;
+    padding-left: 15px;
 } 
+
+.tree > .nivel1 > li >.nodo, .tree > .nivel1 > li > .carpeta >.nodo{
+    padding: 6px 10px;
+}
+
 .tree li {
         list-style-type:none;
 }
 
 .tree .nodo {
     margin-bottom:1px;
-    padding: 2px 10px;
+    padding: 6px 10px;
     position:relative;
     display: inline-block;
     border: 1px solid #999;
     border-radius: 5px;
     color: #333;
-    background-color: #f5f5f5;
+    background-color: #f2f2f2;
     border-color: #ddd;
     width: 100%;
 
 }
 .tree .nodo:hover{
-    background-color: #f0f0f0 
+    background-color: #AAB5C4 
 }
 .tree a {
   color: black;
@@ -35,11 +43,11 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  text-decoration: none;
 }
 
 .tree .nodo a:hover {
-    font-weight: bold;
-    color: black;
+    color:black;
     text-decoration: none;
 }
 
@@ -50,9 +58,12 @@
     right:auto
 }
 .tree li.parent_li > ul > li >.nodo {
-    background-color: #fdfdfd 
-
+    background-color: white 
 }
+ .tree li.parent_li > ul > li >.nodo:hover {
+    background-color: #AAB5C4   
+ }
+
 .tree li span {
     display:inline-block;
     padding:3px 8px 3px 0;
