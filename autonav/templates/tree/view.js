@@ -11,20 +11,15 @@
           }
           e.stopPropagation();
     	});
+      var nodo= $('.tree li.nav-selected');
+      var padres= nodo.parentsUntil('.tree > .nivel1');
+      var hijos = nodo.find('> ul > li');
 
-      var url = window.location.pathname;
-      var padres= $('.tree a[href*="'+url+'"]').parentsUntil('.tree > .nivel1');
-      var nodo= $('.tree a[href*="'+url+'"]').parent().parent().parent().parent('li.parent_li');
-      var hijos = nodo.children('ul').children('li');
-      //nodo.children('> .carpeta, > .nodo').attr('id','actual');
+      padres.attr('title', 'Collapse this branch').find('> .carpeta > .nodo > span > i, > .nodo > span > i').addClass('fa-minus-circle').removeClass('fa-plus-circle');
+      nodo.attr('title', 'Collapse this branch').find('> .carpeta > .nodo > span > i, > .nodo > span > i').addClass('fa-minus-circle').removeClass('fa-plus-circle');
+      $('.tree > ul > li').hide();
       padres.show();
       nodo.show();
       hijos.show();
       
-      padres.attr('title', 'Collapse this branch').find('i').addClass('fa-minus-circle').removeClass('fa-plus-circle');      
-/*
-      hijos.attr('title', 'Collapse').find(' >  i').addClass('fa-plus-circle').removeClass('fa-minus-circle');
-      nodo.attr('title', 'Collapse').find(' > i').addClass('fa-minus-circle').removeClass('fa-plus-circle');
-
-*/
   	});
