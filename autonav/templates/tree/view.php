@@ -63,6 +63,9 @@ foreach ($navItems as $ni) {
 		$classes[] = 'nav-path-selected';
 	}
 
+
+
+
 	/*
 	if ($ni->isFirst) {
 		//class for the first item in each menu section (first top-level item, and first item of each dropdown sub-menu)
@@ -110,8 +113,18 @@ foreach ($navItems as $ni) {
 //*** Step 2 of 2: Output menu HTML ***/
 
 echo '<div class="tree "><ul class="nav nivel1">'; //opens the top-level menu
+$anterior = true;
 
 foreach ($navItems as $ni) {
+
+	if ($ni->isCurrent) {
+		$anterior = false;
+	}
+
+	if (!($ni->inPath) && ($anterior)) {
+		//class for parent items of the page currently being viewed
+		continue;
+	}
 
 	echo '<li class="' . $ni->classes . '">'; //opens a nav item
 
