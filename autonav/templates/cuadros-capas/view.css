@@ -1,0 +1,98 @@
+    /** box wrapper for each food information, each set to float to left **/
+    .item-listado-cuadros-capas{
+        padding:7px;
+        float:left;
+        margin:7px;
+        height:180px;
+        background:#f8f6f6;
+        -moz-box-shadow:  1px 1px 1px #ccc;
+        -webkit-box-shadow:  1px 1px 1px #ccc;
+        box-shadow: 1px 1px 1px #ccc;
+        position:relative;
+        cursor:pointer;
+    }
+    
+
+ 
+    /** we hide the transparent slideup div and will only show when hovering **/
+    .item-cuadro-capa-transparente{
+        height:130px;
+        width:100%;
+        position:absolute;
+        bottom:0;
+        left:0;
+        background:url(images/transparent_black.png);
+        display:none;
+    }
+    
+    
+    .clear{
+        clear:both;
+    }
+
+
+.cuadro-menu {
+    height: 100px;
+    margin-bottom: 2px; 
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    padding: 5px;
+
+}
+
+.cuadro-menu a{
+    width: 100%;
+
+
+}
+.item-listado {
+  display:table;
+    background-color: #0079c2;
+    margin-bottom: 2px;
+    opacity:0.5;
+}
+
+.item-listado a {
+    color:white;
+    font-weight: bold;
+    font-size: 1.1em;
+    text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 2px #000,
+    -1px 1px 2px #000,
+    1px 1px 0 #000; 
+}
+
+
+.item-listado:nth-of-type(n) {
+    background-color: #0079c2;
+}
+
+.item-listado:nth-of-type(2n) {
+    background-color: #0a00c2;
+}
+
+.item-listado:nth-of-type(3n){
+    background-color: #8b00c2;
+}
+
+.item-listado:nth-of-type(4n){
+    background-color: #7F0200;
+    /*#416881;*/
+}
+
+.item-listado:nth-of-type(5n){
+    background-color: #97CA04;/*#3d3d3d;*/
+}
+
+.item-listado:nth-of-type(6n){
+    background-color: #FFBF02; /*#651A83;*/
+}
+.item-listado:nth-of-type(7n){
+    background-color: #009D9B;
+}
+
+.item-listado:nth-of-type(8n){
+    background-color: #FE6400;
+}
