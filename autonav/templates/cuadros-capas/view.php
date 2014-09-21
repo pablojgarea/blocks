@@ -110,7 +110,8 @@ foreach ($navItems as $ni) {
 
 //*** Step 2 of 2: Output menu HTML ***/
 
-echo '<div class="lista-cuadros-capas cuadro-menu row">'; //opens the top-level menu
+
+echo '<div class="lista-cuadros-capas  row row-centered">'; //opens the top-level menu
 
 foreach ($navItems as $ni) {
 
@@ -118,12 +119,18 @@ foreach ($navItems as $ni) {
 	$pagina = Page::getByID($paginaID);
 	$descripcion = $pagina->getCollectionDescription();
 
-	echo '<div class="item-listado item-listado-cuadros-capas panel panel-default col-md-3 col-lg-3 ' . $ni->classes . '">'; //opens a nav item
+	if (trim($descripcion)==''){
+		$descripcion='<i class="fa fa-link fa-4x"></i>';
+	}
+
+	echo '<div class="item-listado-cuadros-capas col-xs-12 col-sm-6 col-md-4 col-lg-3 col-centered ' . $ni->classes . '">'; //opens a nav item
 
 	echo '	<a href="' . $ni->url . '" target="' . $ni->target . '" class="' . $ni->classes . '">' . $ni->name . '</a>';
 
- 	echo '	<div class="item-cuadro-capa-transparente">';
+	echo '  <div class="flecha-pie"><i class="fa fa-chevron-circle-up fa-2x"></i></div>';	
 
+ 	echo '	<div class="item-cuadro-capa-transparente">';
+ 	echo '  <div class="flecha-abajo"><i class="fa fa-chevron-circle-down fa-2x"></i></div>';	
     echo '		<a href="' . $ni->url . '" target="' . $ni->target . '" class="' . $ni->classes . '">' . $descripcion . '</a>';
 
     echo '	</div>';
