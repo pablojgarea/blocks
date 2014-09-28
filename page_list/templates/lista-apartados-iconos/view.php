@@ -32,16 +32,16 @@ $th = Loader::helper('text');
 		<div class="item-listado-cuadros-capas col-xs-6 col-sm-6 col-md-4 col-lg-3 col-centered ">
 				
 				<div class="titulo-apartado">
-					<a href="<?php  echo $url ?>" target="<?php  echo $target ?>">I:<?=$icon?><?php  echo $title ?>
+					<a href="<?php  echo $url ?>" target="<?php  echo $target ?>"><?php  echo $title ?>
 					<?php 
-						if(!empty($icon)){ echo '<div class="icono"><i class="flaticon-'.$icon.'"></i></div>'; } 
+						if(!empty($icon)){ echo '<div class="icono"><i class="'.$icon.'"></i></div>'; } 
 					?>
 					</a>
 				</div>
 				<div class="flecha-pie"><i class="flaticon-arrow103"></i></div>
 				<div class="item-cuadro-capa-transparente">
 					<div class="flecha-abajo"><i class="flaticon-down4"></i></div>
-					<a href="<?php  echo $url ?>" target="<?php  echo $target ?>" ><?php  echo $description ?></a>;
+					<div class="descripcion-apartado"><a href="<?php  echo $url ?>" target="<?php  echo $target ?>" ><?php  echo $description ?></a></div>;
 				</div>
 		</div>
 	<?php  endforeach; ?>
