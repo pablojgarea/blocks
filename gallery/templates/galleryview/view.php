@@ -95,7 +95,7 @@
 
 <script type="text/javascript">
 	$(function(){
-		$('#myGallery').galleryView();
+		$('#myGallery').galleryView({"transition_speed":2000,"transition_interval":3000});
 	});
 </script>
 
