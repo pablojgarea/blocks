@@ -125,25 +125,38 @@ foreach ($navItems as $ni) {
 		//class for parent items of the page currently being viewed
 		continue;
 	}
+    $hijos=$ni->cObj->getCollectionChildrenArray(1);
+    $path=$ni->cObj->getCollectionPath();
 
 	echo '<li class="' . $ni->classes . '">'; //opens a nav item
 
 	if ($ni->hasSubmenu) {
 		echo '<div class="carpeta">';
+	}else{
+		//comprobar hijos		
+		if (!empty($hijos)){
+			echo '<div class="carpeta">';
+		}
 	}
 	echo '<div class="nodo">';
-	if ($ni->hasSubmenu) {
+
+	if ($ni->hasSubmenu or !empty($hijos)) {
 		echo '<span><i class="fa fa-plus-circle"></i> </span>';
 	}
-	echo '<a href="' . $ni->url . '" target="' . $ni->target . '" class=" ' . $ni->classes . '">' . $ni->name . '</a>';
+	echo '<a path="'.$path.'" href="' . $ni->url . '" target="' . $ni->target . '" class=" ' . $ni->classes . '">' . $ni->name . '</a>';
 	echo '</div>';
 
 	if ($ni->hasSubmenu) {
 		echo '</div><ul class="nivel2">'; //opens a dropdown sub-menu
 	} else {
+		$hijos=$ni->cObj->getCollectionChildrenArray(1);
+		if (!empty($hijos)){
+			echo '</div><ul class="nivel2">';
+		}
 		echo '</li>'; //closes a nav item
 		echo str_repeat('</ul></li>', $ni->subDepth); //closes dropdown sub-menu(s) and their top-level nav item(s)
 	}
 }
 
 echo '</ul></div>'; //closes the top-level menu
+echo '<div id="hijos-ajax"></div>';
