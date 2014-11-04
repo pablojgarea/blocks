@@ -111,24 +111,34 @@ foreach ($navItems as $ni) {
 }
 
 //*** Step 2 of 2: Output menu HTML ***/
+$actual = Page::getCurrentPage();
+$padre = Page::getByID($this->controller->cParentID);
+echo '<div class="tree"><ul class="nav nivel1"><li class="nav-path-selected parent_li">'; //opens the top-level menu
+if ($padre->getCollectionID() != 1){
+echo '<div class="carpeta">';
+echo '<div class="nodo">';
+echo '<a href="' . $padre->getCollectionPath() . '">' . $padre->getCollectionName() . '</a>';
+echo '</div>';
+echo '</div><ul class="nivel2"><li class="nav-path-selected nav-selected parent_li">'; //opens a dropdown sub-menu
+}else{
+echo '<ul class="nivel2"><li class="nav-path-selected nav-selected parent_li">'; //opens a dropdown sub-menu
+}
 
-echo '<div class="tree "><ul class="nav nivel1">'; //opens the top-level menu
-$anterior = true;
+echo '<div class="carpeta">';
+echo '<div class="nodo">';
+
+
+
+echo '<a href="' . $actual->getCollectionPath() . '">' . $actual->getCollectionName() . '</a>';
+echo '</div>';
+echo '</div><ul class="nivel2"><li class="nav-path-selected parent_li">'; //opens a dropdown sub-menu
 
 foreach ($navItems as $ni) {
 
-	if ($ni->isCurrent) {
-		$anterior = false;
-	}
-
-	if (!($ni->inPath) && ($anterior)) {
-		//class for parent items of the page currently being viewed
-		continue;
-	}
     $hijos=$ni->cObj->getCollectionChildrenArray(1);
     $path=$ni->cObj->getCollectionPath();
 
-	echo '<li class="' . $ni->classes . '">'; //opens a nav item
+	echo '<ul class="nav nivel2"><li class="' . $ni->classes . '">'; //opens a nav item
 
 	if ($ni->hasSubmenu) {
 		echo '<div class="carpeta">';
@@ -153,10 +163,25 @@ foreach ($navItems as $ni) {
 		if (!empty($hijos)){
 			echo '</div><ul class="nivel2">';
 		}
-		echo '</li>'; //closes a nav item
-		echo str_repeat('</ul></li>', $ni->subDepth); //closes dropdown sub-menu(s) and their top-level nav item(s)
+		echo '</ul></li></ul>'; //closes a nav item
 	}
+	echo str_repeat('</ul></li>', $ni->subDepth); //closes dropdown sub-menu(s) and their top-level nav item(s)
+
 }
 
+if ($padre->getCollectionID() != 1){
+echo '</li></ul>';//cerrar actual
+}
+echo '</li></ul>';//cerrar padre
 echo '</ul></div>'; //closes the top-level menu
+
 echo '<div id="hijos-ajax"></div>';
+?>
+<script type="text/javascript">
+<?php
+//$uh = Loader::helper('concrete/urls');
+//$bt = $this->getBlockObject()->getBlockTypeObject();
+//$tools_url = $uh)->getToolsURL($bt->getBlockName());
+?>
+//localStorage.setItem("urlBlock", '<?php echo $tools_url?>');
+</script>
