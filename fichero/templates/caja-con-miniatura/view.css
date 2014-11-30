@@ -1,0 +1,34 @@
+.caja-fichero {
+	border:1px solid white;
+	border-radius: 2px;
+	display: flex;
+	padding: 10px;
+	box-shadow: 1px 1px 4px black;
+	background-color: white;
+}
+.titulo{
+	font-weight: bolder;
+}
+
+.descripcion{
+	font-size: smaller;
+	line-height: 7px;
+	padding: 4px;
+}
+
+.miniatura img{
+	border-radius: 4px;
+}
+.preview{
+	display: none;
+	position: fixed;
+	left: 1%;
+	top:1%;
+	z-index: 10;
+	box-shadow: 1px 1px 4px black;
+	width: 38%;
+}
+
+.preview img {
+	width:100%;
+}

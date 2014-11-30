@@ -1,0 +1,17 @@
+.noticias-portada {
+	max-width: 800px;
+	right: 10px;
+	float: right;
+}
+
+.noticias-portada .ps-caption{
+	font-size: 1.8rem
+}
+
+.noticias-portada .descripcion-noticia{
+	font-size: 1.5rem;
+	font-weight: normal;
+}
+ul.pgwSlider>li span, .pgwSlider>.ps-list>li span{
+	font-size: 1.3rem;
+}

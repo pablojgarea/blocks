@@ -1,0 +1,24 @@
+.node {
+  cursor: pointer;
+}
+
+.node circle {
+  fill: #fff;
+  stroke: steelblue;
+  stroke-width: 1.5px;
+}
+
+.node text {
+  font: 10px sans-serif;
+  -webkit-transform: rotate(320deg);
+-moz-transform: rotate(320deg);
+-o-transform: rotate(320deg);
+writing-mode: lr-tb;
+background-color: white;
+}
+
+.link {
+  fill: none;
+  stroke: #ccc;
+  stroke-width: 1.5px;
+}
